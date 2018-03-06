@@ -1,0 +1,17 @@
+class UrlManage(object):
+    def __init__(self):
+        self.new_urls = set()
+        self.old_urls = set()
+
+    def add_new_url(self, root_url):
+        pass
+
+    def add_new_urls(self, new_urls):
+        pass
+
+    def has_new_url(self):
+        pass
+
+    def get_new_url(self):
+        pass
+
