@@ -15,12 +15,14 @@ class SpilderMain(object):
 
     def craw(self, root_url):
         # 抓取的第count个url
-        count = 1
+        count = 0
         self.urls.add_new_url(root_url)
         while self.urls.has_new_url():
             try:
+                count += 1
                 new_url = self.urls.get_new_url()
                 print 'craw %d: %s' %(count, new_url)
+
                 html_cont = self.downloader.download(new_url)
                 new_urls, new_data = self.parser.parse(new_url, html_cont)
                 self.urls.add_new_urls(new_urls)
@@ -29,8 +31,6 @@ class SpilderMain(object):
                 # 抓取1000个url
                 if count == 1000:
                     break
-
-                count += 1
             except:
                 print 'craw failed'
 
@@ -39,6 +39,6 @@ class SpilderMain(object):
 if __name__ == '__main__':
     # 入口url
     root_url = 'https://baike.baidu.com/item/Python/407313'
-    obj_splider = SpilderMain()
+    obj_spider = SpilderMain()
     # 启动爬虫
-    obj_splider.craw(root_url)
+    obj_spider.craw(root_url)
