@@ -19,7 +19,7 @@ class HtmlParser(object):
     def _get_new_urls(self, page_url, soup):
         new_urls = set()
 
-        # / item / Python / 407313
+        # /item/Python/407313
         links = soup.find_all('a', href=re.compile(r'/item/.*'))
         for link in links:
             new_url = link['href']

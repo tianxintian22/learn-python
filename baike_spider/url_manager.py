@@ -1,6 +1,7 @@
 # coding=utf-8
 class UrlManage(object):
     def __init__(self):
+        # set存储的是一组不重复的无序元素
         self.new_urls = set()
         self.old_urls = set()
 
