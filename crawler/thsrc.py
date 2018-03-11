@@ -11,13 +11,17 @@ request.add_header('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebK
 post_data = {
     'StartStation' : '9c5ac6ca-ec89-48f8-aab0-41b738cb1814',
     'EndStation' : '977abb69-413a-4ccf-a109-0272c24fd490',
-    'SearchDate' : '2018/03/08',
-    'SearchTime ': '10:00',
-    'SearchWay' : 'DepartureInMandarin'
+    'SearchDate' : '2018/03/12',
+    'SearchTime': '16:30',
+    'SearchWay' : 'DepartureInMandarin',
+    'RestTime': '',
+    'EarlyOrLater': ''
 }
 data = urllib.urlencode(post_data)
 request.add_data(data)
 
 response = urllib2.urlopen(request)
 
-print response.read()
+output = response.read()
+f = open('test.html', 'w')
+f.write(output)
