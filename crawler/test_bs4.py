@@ -17,6 +17,7 @@ and they lived at the bottom of a well.</p>
 """
 # 创建BeautifulSoup对象，将文档字符串加载成为dom树
 soup = BeautifulSoup(html_doc, 'html.parser', from_encoding='utf-8')
+print soup.prettify()
 print '获取所有的链接'
 # find_all()搜索出所有满足要求的节点
 links = soup.find_all('a')
